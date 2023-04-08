@@ -48,9 +48,9 @@
     <header>
         <nav class="navbar">
             <ul>
-                <li><a href="./home.html">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li><a href="./Priority.html">Priority Order</a></li>
-                <li><a href="./complaints.html">Services</a></li>
+                <li><a href="./complaint.html">Complaint</a></li>
                 <li><a href="./contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -61,15 +61,14 @@
     <h2>Order of Priority</h2>
     
     <ul>
+        {% for i in data %}
+
         <li>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus tortor id mi dignissim blandit.</p>
+            <h3> {{i.0}}  : </h3>  {{i.1}}  :  <b>{{i.2}} </b>
+            <br><br>
         </li>
-        <li>
-        <p>Nullam in nisi id felis iaculis congue. Morbi lacinia risus a nunc fringilla fermentum.</p>
-        </li>
-        <li>
-        <p>Aliquam fermentum dolor et lacus pharetra, a convallis neque pretium. Integer in arcu et lectus bibendum convallis.</p>
-        </li>
+
+        {% endfor %}
     </ul>
 
 </body>
