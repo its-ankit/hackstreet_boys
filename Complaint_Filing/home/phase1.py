@@ -1,42 +1,39 @@
-# from django.test import LiveServerTestCase
-# from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.common.by import By
-# import time
-# import getpass
+from django.test import LiveServerTestCase
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+import time
+import getpass
 
-# import argparse
-# import json
-# import csv
-# from selenium.webdriver.chrome.options import Options
-# from bs4 import BeautifulSoup as bs
-# from autoscraper import AutoScraper
+import argparse
+import json
+import csv
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup as bs
+from autoscraper import AutoScraper
 
-# options = webdriver.ChromeOptions()
-# # options.headless = True
-# options.add_argument('--disable-notifications')
-# driver = webdriver.Chrome('C:\\Users\\Shaurya\\Documents\\Lets Start\\Complaint_Filing\chromedriver.exe',options=options)
-# driver.get('https://www.facebook.com/')
+options = webdriver.ChromeOptions()
+# options.headless = True
+options.add_argument('--disable-notifications')
+driver = webdriver.Chrome('C:\\Users\\Shaurya\\Documents\\Lets Start\\Complaint_Filing\chromedriver.exe',options=options)
+driver.get('https://www.facebook.com/')
 
-# driver.find_element(By.NAME, 'email').send_keys('6201560685')
-# driver.find_element(By.NAME, 'pass').send_keys('#$hourya17Puru')
-# driver.find_element(By.NAME, 'login').send_keys(Keys.ENTER)
+driver.find_element(By.NAME, 'email').send_keys('6201560685')
+driver.find_element(By.NAME, 'pass').send_keys('#$hourya17Puru')
+driver.find_element(By.NAME, 'login').send_keys(Keys.ENTER)
 
-# texts=driver.find_element(By.CLASS_NAME, 'x126k92a')
-# print(texts)
-# time.sleep(40)
-# page_source=driver.page_source
-# Parse the html file
-# soups = bs(page_source, 'html.parser')
+texts=driver.find_element(By.CLASS_NAME, 'x126k92a')
+print(texts)
+time.sleep(40)
+page_source=driver.page_source
+soups = bs(page_source, 'html.parser')
 
-# Format the parsed html file
-# soup = soups.prettify()
-# texts=soups.find_all('div[@class="x11i5rnm xat24cr x1mh8g0r x1vvkbs xdj266r x126k92a"]')
-# print(texts)
-# fun=open("home.html","w")
-# fun.write(page_source)
-# fun.close()
-# url='home.html'
+soup = soups.prettify()
+print(texts)
+fun=open("home.html","w")
+fun.write(page_source)
+fun.close()
+url='home.html'
 # lis=["Advertising Tips Sharing Community","I have found a way to increase my ad payment threshold limit, It's great it helps me increase my work efficiency, I share it for everyone to promote the business process together. "]
 # texts=driver.find_element(By.CSS_SELECTOR, 'div[id="jsc_c_8k"] div[dir="auto"]').getText()
 # print(texts)
@@ -122,13 +119,3 @@
 # print(lis)
 
 
-from facebook_page_scraper import Facebook_scraper
-
-page_name="reporting scams"
-posts_count=10
-browser="chrome"
-proxy=""
-timeout=600
-meta_ai=Facebook_scraper(page_name,posts_count, browser, proxy=proxy, timeout=timeout)
-json_data=meta_ai.scrap_to_join()
-print(json_data)

@@ -47,8 +47,8 @@ def fun(query):
         
         return tweets
 
-query="scam fraud misleading online"
-print(fun(query))
+# query="scam fraud misleading online"
+# print(fun(query))
 # for i in dict:
 #     print(i,dict[i])
 

@@ -43,16 +43,93 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="./">Home</a></li>
-                <li><a href="./Priority.html">Priority Order</a></li>
-                <li><a href="./complaint.html">Complaint</a></li>
-                <li><a href="./contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+        }
+        
+        h1 {
+          text-align: center;
+          margin-top: 50px;
+        }
+        
+        form {
+          width: 500px;
+          margin: 0 auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        label {
+          display: block;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-top: 5px;
+          box-sizing: border-box;
+          font-size: 16px;
+        }
+        
+        button[type="submit"] {
+          display: block;
+          margin-top: 20px;
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+        
+        button[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+      </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./Priority.html">Priority Order</a></li>
+                    <li><a href="./complaint.html">Complaint</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+      <h1>File a Complaint</h1>
+      
+      <form method="POST" action="submit_complaint">
+        {% csrf_token %}
+        <label for="product_name">Name:</label>
+        <input type="text" id="product_name" name="product_name">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="product_availed">Product/Service Availed:</label>
+        <input type="text" id="product_availed" name="product_availed">
+        
+        <label for="service_provider">Service Provider:</label>
+        <input type="text" id="service_provider" name="service_provider">
+        
+        <label for="desc">Complaint:</label>
+        <textarea id="desc" name="desc"></textarea>
+        
+        <button type="submit" >Submit Complaint</button>
+      </form>
+    </body>
 
 </html>
