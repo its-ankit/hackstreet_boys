@@ -3,19 +3,77 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
+import getpass
+
+import argparse
+import json
+import csv
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup as bs
+from autoscraper import AutoScraper
 
 options = webdriver.ChromeOptions()
 # options.headless = True
 options.add_argument('--disable-notifications')
 driver = webdriver.Chrome('C:\\Users\\Shaurya\\Documents\\Lets Start\\Complaint_Filing\chromedriver.exe',options=options)
 driver.get('https://www.facebook.com/')
+
+    
+
+
+
+
 driver.find_element(By.NAME, 'email').send_keys('6201560685')
 driver.find_element(By.NAME, 'pass').send_keys('#$hourya17Puru')
 driver.find_element(By.NAME, 'login').send_keys(Keys.ENTER)
-time.sleep(30)
+
+lis=[]
+texts=driver.find_element(By.CSS_SELECTOR, 'div[id="jsc_c_8k"] div[dir="auto"]').getText()
 
 
-# box = driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
+
+# def _extract_post_text(item):
+#     actualPosts = item.find_all(attrs={"data-testid": "post_message"})
+#     text = ""
+#     if actualPosts:
+#         for posts in actualPosts:
+#             paragraphs = posts.find_all('p')
+#             text = ""
+#             for index in range(0, len(paragraphs)):
+#                 text += paragraphs[index].text
+#     return text
+
+
+
+
+
+
+
+# last_height = driver.execute_script('return document.body.scrollHeight')
+# i=0
+texts=driver.find_element(By.XPATH, '//h4[@id="jsc_c_56"]//span[@class="xt0psk2"]').getText()
+# print(texts)
+# while (i<20):
+#      driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
+#      time.sleep(2)
+#      new_height = driver.execute_script('return document.body.scrollHeight')
+#      try:
+#          texts=driver.find_element(By.XPATH, '\\div[contains(@class,"x11i5rnm xat24cr x1mh8g0r x1vvkbs xdj266r x126k92a")]').getText()
+#          time.sleep(2)
+#          lis.append(texts)
+#      except:
+#          pass
+#      if new_height == last_height:
+#          break
+#      last_height = new_height
+    #  i+=1
+print(lis)
+# name_of_user=driver.find_element(By.XPATH, '//div[@class="x11i5rnm xat24cr x1mh8g0r x1vvkbs xdj266r x126k92a"]')
+# print(name_of_user)
+# time.sleep(30)
+
+
+# box = driver.find_element(By.XPATH, 'h4[id='jsc_c_ys'] a[role='link'] span')
 # data="cats images"
 # box.send_keys(data)
 # box.send_keys(Keys.ENTER)
