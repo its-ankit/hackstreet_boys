@@ -48,7 +48,7 @@
             <ul>
                 <li><a href="./home.html">Home</a></li>
                 <li><a href="./Priority.html">Priority Order</a></li>
-                <li><a href="./complains.html">Services</a></li>
+                <li><a href="./complaints.html">Services</a></li>
                 <li><a href="./contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -57,7 +57,17 @@
     <h2>Reported Scams</h2>
     
     <ul>
+        {% for i in data %}
+
         <li>
+            <h3>{{ i.0 }} :</h3> <h4>{{i.1}} </h4>
+        </li>
+
+
+        {% endfor %}
+
+
+        <!-- <li>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus tortor id mi dignissim blandit.</p>
         </li>
         <li>
@@ -65,7 +75,7 @@
         </li>
         <li>
         <p>Aliquam fermentum dolor et lacus pharetra, a convallis neque pretium. Integer in arcu et lectus bibendum convallis.</p>
-        </li>
+        </li> -->
     </ul>
     </header>
 </body>
