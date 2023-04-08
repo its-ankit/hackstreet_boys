@@ -20,7 +20,7 @@ def index(request):
     query3="online fraud transaction"
     query4="services fake bad"
     query5 = "experience poor support"
-    lists=abcd.fun(query1)
+    lists=abcd.fun(query5)
     params = {"data" : lists}
     # for i in lists:
         # print(i[0])
