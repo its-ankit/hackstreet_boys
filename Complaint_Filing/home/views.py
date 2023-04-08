@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from . import abcd
 from . import sentiment
-from home.models import Product
+from .models import Product
 
 # def index(request):
 #     return HttpResponse('<H1> Hello </H1> <a href = "https://www.facebook.com/"> Facebook </a>')
@@ -53,7 +53,6 @@ def submit_complaint(request):
         product_availed=request.POST.get('product_availed')
         service_provider=request.POST.get('service_provider')
         desc=request.POST.get('desc')
-  
         z=Product(product_name=product_name,email=email,product_availed=product_availed,service_provider=service_provider,desc=desc)
         z.save()
 

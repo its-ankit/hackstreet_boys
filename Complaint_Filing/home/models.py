@@ -8,3 +8,4 @@ class Product(models.Model):
     product_availed = models.CharField(max_length=50)
     service_provider = models.CharField(max_length=50)
     desc=models.CharField(max_length=500)
+    
