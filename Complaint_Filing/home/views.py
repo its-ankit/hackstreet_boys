@@ -1,20 +1,7 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 from . import abcd
 from . import sentiment
 from .models import Product
-
-# def index(request):
-#     return HttpResponse('<H1> Hello </H1> <a href = "https://www.facebook.com/"> Facebook </a>')
-# def about(request):
-#     return HttpResponse("About me checking the page")
-
-# def read(request):
-#     d1 = open("1.txt", 'r')
-#     data = d1.read()
-#     d1.close()
-#     return HttpResponse(data)
-
 
 def index(request):
     query1="scam fraud misleading online"
@@ -24,10 +11,6 @@ def index(request):
     query5 = "experience poor support"
     lists=abcd.fun(query1)
     params = {"data" : lists}
-    # for i in lists:
-        # print(i[0])
-        # print(i[1])
-        # print()
     return render(request, 'home.html', params)
 
 def priority(request):
@@ -53,7 +36,6 @@ def submit_complaint(request):
         product_availed=request.POST.get('product_availed')
         service_provider=request.POST.get('service_provider')
         desc=request.POST.get('desc')
-        z=Product(product_name=product_name,email=email,product_availed=product_availed,service_provider=service_provider,desc=desc)
+        z=Product(product_name=product_name, email=email, product_availed=product_availed, service_provider=service_provider, desc=desc)
         z.save()
-
-    return render(request,'home.html')
+        return render(request,'<html>good going</html>')

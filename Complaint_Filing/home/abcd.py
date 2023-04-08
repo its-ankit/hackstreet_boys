@@ -16,8 +16,6 @@ def fun(query):
     user_content=[]
 
     for tweet in sntwitter.TwitterSearchScraper(query).get_items():
-        # print(vars(tweet))
-        # break
         if len(tweets)==limit:
             break
         else:
@@ -47,9 +45,5 @@ def fun(query):
         
         return tweets
 
-# query="scam fraud misleading online"
-# print(fun(query))
-# for i in dict:
-#     print(i,dict[i])
 
 
