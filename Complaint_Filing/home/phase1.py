@@ -18,19 +18,32 @@ options.add_argument('--disable-notifications')
 driver = webdriver.Chrome('C:\\Users\\Shaurya\\Documents\\Lets Start\\Complaint_Filing\chromedriver.exe',options=options)
 driver.get('https://www.facebook.com/')
 
-    
-
-
-
-
 driver.find_element(By.NAME, 'email').send_keys('6201560685')
 driver.find_element(By.NAME, 'pass').send_keys('#$hourya17Puru')
 driver.find_element(By.NAME, 'login').send_keys(Keys.ENTER)
 
-lis=[]
-texts=driver.find_element(By.CSS_SELECTOR, 'div[id="jsc_c_8k"] div[dir="auto"]').getText()
+texts=driver.find_element(By.CLASS_NAME, 'x126k92a')
+print(texts)
+time.sleep(40)
+# page_source=driver.page_source
+# Parse the html file
+# soups = bs(page_source, 'html.parser')
 
-
+# Format the parsed html file
+# soup = soups.prettify()
+# texts=soups.find_all('div[@class="x11i5rnm xat24cr x1mh8g0r x1vvkbs xdj266r x126k92a"]')
+# print(texts)
+# fun=open("home.html","w")
+# fun.write(page_source)
+# fun.close()
+# url='home.html'
+# lis=["Advertising Tips Sharing Community","I have found a way to increase my ad payment threshold limit, It's great it helps me increase my work efficiency, I share it for everyone to promote the business process together. "]
+# texts=driver.find_element(By.CSS_SELECTOR, 'div[id="jsc_c_8k"] div[dir="auto"]').getText()
+# print(texts)
+# print(page_source)
+# scraper=AutoScraper()
+# result=scraper.build(url,lis)
+# print(strhtm)
 
 # def _extract_post_text(item):
 #     actualPosts = item.find_all(attrs={"data-testid": "post_message"})
@@ -51,7 +64,7 @@ texts=driver.find_element(By.CSS_SELECTOR, 'div[id="jsc_c_8k"] div[dir="auto"]')
 
 # last_height = driver.execute_script('return document.body.scrollHeight')
 # i=0
-texts=driver.find_element(By.XPATH, '//h4[@id="jsc_c_56"]//span[@class="xt0psk2"]').getText()
+# texts=driver.find_element(By.XPATH, '//h4[@id="jsc_c_56"]//span[@class="xt0psk2"]').getText()
 # print(texts)
 # while (i<20):
 #      driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
@@ -67,7 +80,7 @@ texts=driver.find_element(By.XPATH, '//h4[@id="jsc_c_56"]//span[@class="xt0psk2"
 #          break
 #      last_height = new_height
     #  i+=1
-print(lis)
+# print(lis)
 # name_of_user=driver.find_element(By.XPATH, '//div[@class="x11i5rnm xat24cr x1mh8g0r x1vvkbs xdj266r x126k92a"]')
 # print(name_of_user)
 # time.sleep(30)
